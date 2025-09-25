@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, jsonify
+from dotenv import load_dotenv
 from core.config import AppConfig
 from core.vector_utils import VectorUtils
 from core.recommendation import ResearcherRecommender
@@ -6,6 +7,9 @@ from core.analyzer import Assistant
 from core.api import search_papers_by_keyword, search_researchers_by_name
 from psycopg2.extras import RealDictCursor
 from core.db import get_connection
+
+# .env 파일 로드
+load_dotenv()
 
 # Flask 앱 초기화
 app = Flask(__name__)
