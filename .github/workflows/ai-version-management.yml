@@ -1,0 +1,51 @@
+name: AI Version Management & Notion Sync
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  issues:
+    types: [opened, edited, closed, reopened, assigned, unassigned, labeled, unlabeled]
+  issue_comment:
+    types: [created, edited, deleted]
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  version-management:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: |
+        pip install PyGithub requests python-dotenv
+    - name: Generate AI Version Tag
+      id: version
+      run: |
+        AI_VERSION="ai-$(date +%Y%m%d)-$(git rev-parse --short HEAD)"
+        echo "ai_version=$AI_VERSION" >> $GITHUB_OUTPUT
+        echo "Generated AI Version: $AI_VERSION"
+    - name: Create Version Tag
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag -a ${{ steps.version.outputs.ai_version }} -m "AI Version: ${{ steps.version.outputs.ai_version }}"
+        git push origin ${{ steps.version.outputs.ai_version }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Sync Issues to Notion
+      run: python tools/notion_sync.py
+      env:
+        NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO: ${{ github.repository }}
+

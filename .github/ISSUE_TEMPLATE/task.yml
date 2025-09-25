@@ -1,0 +1,26 @@
+name: Task
+description: 일을 정의합니다.
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: 무엇을 왜 하는가?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: 포함/제외 범위
+  - type: input
+    id: eta
+    attributes:
+      label: ETA (YYYY-MM-DD)
+  - type: input
+    id: progress
+    attributes:
+      label: Progress (%)
+      placeholder: "0"

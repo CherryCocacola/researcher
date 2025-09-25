@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 연구자 추천 시스템</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 30px;
+    }
+
+    .upload-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: 1px dashed #bbb;
+      background-color: white;
+      padding: 20px;
+      width: 480px;
+      min-height: 160px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .upload-box input[type="file"] {
+      display: none;
+    }
+
+    #uploadIcon {
+      max-width: 100%;
+      width: 160px;
+      height: auto;
+      display: block;
+    }
+
+    #previewImage {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .upload-label {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #1a73e8;
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .search-box {
+      margin-top: 24px;
+      width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .search-box textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      resize: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .search-box .button-stack {
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .button-stack button {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .button-stack button:nth-child(1) { background-color: #6a1b9a; }
+    .button-stack button:nth-child(2) { background-color: #1976d2; }
+    .button-stack button:nth-child(3) { background-color: #757575; }
+
+    .loader {
+      margin-top: 24px;
+      width: 36px;
+      height: 36px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #1976d2;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .result {
+      margin-top: 32px;
+      width: 800px;
+    }
+
+    .result-box {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .no-result-box {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      text-align: center;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .highlight {
+      color: #d32f2f;
+      font-weight: bold;
+      white-space: pre-line;
+    }
+
+    .papers {
+      margin-top: 10px;
+    }
+    .papers ul { padding-left: 18px; }
+    .papers a { color: #1976d2; text-decoration: none; }
+    .papers a:hover { text-decoration: underline; }
+
+    /* Modal */
+    #researcherModal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35); align-items:center; justify-content:center; }
+    #researcherModal .panel { background:#fff; width:560px; max-width:90vw; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+    #researcherModal .header { padding:16px 20px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; }
+    #researcherModal .body { padding:16px 20px; line-height:1.6; }
+    #researcherModal .close { border:none; background:transparent; font-size:18px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">AI 연구자 추천 시스템</div>
+
+    <div class="upload-box" id="dropZone">
+      <img id="uploadIcon" src="/static/icons8.png" alt="이미지 업로드" />
+      <input type="file" id="imageInput" accept=".png,.jpg,.jpeg">
+      <img id="previewImage" />
+      <label for="imageInput" class="upload-label">파일 선택</label>
+    </div>
+
+    <div class="search-box">
+      <textarea id="queryInput" placeholder="이미지 업로드 후 AI가 분석한 이미지 설명  &#13;&#10; &#13;&#10;간단한 주제를 입력한 뒤 AI 어시스트를 선택하고 연구자 추천을 선택하세요."></textarea>
+      <div class="button-stack">
+        <button onclick="aiAssist()">AI 어시스트</button>
+        <button onclick="search()">연구자 추천</button>
+        <button onclick="clearAll()">Clear</button>
+      </div>
+    </div>
+
+    <div id="loader" class="loader"></div>
+    <div id="results" class="result"></div>
+  </div>
+
+  <div id="researcherModal">
+    <div class="panel">
+      <div class="header">
+        <div style="font-weight:700">연구자 상세 정보</div>
+        <button class="close" onclick="closeResearcherModal()">×</button>
+      </div>
+      <div id="researcherModalBody" class="body"></div>
+    </div>
+  </div>
+ 
+<script>
+  const dropZone = document.getElementById("dropZone");
+  const imageInput = document.getElementById("imageInput");
+  const previewImage = document.getElementById("previewImage");
+  const queryInput = document.getElementById("queryInput");
+  const resultsDiv = document.getElementById("results");
+  const uploadIcon = document.getElementById("uploadIcon");
+  const researcherModal = document.getElementById("researcherModal");
+  const researcherModalBody = document.getElementById("researcherModalBody");
+
+  dropZone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropZone.classList.add("dragover");
+  });
+
+  dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+
+  dropZone.addEventListener("drop", async e => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+    const file = e.dataTransfer.files[0];
+    if (file) await uploadImage(file);
+  });
+
+  imageInput.addEventListener("change", async () => {
+    const file = imageInput.files[0];
+    if (file) await uploadImage(file);
+  });
+
+  function autoResizeTextarea(el) {
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+
+  queryInput.addEventListener("input", () => autoResizeTextarea(queryInput));
+
+  queryInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      const value = queryInput.value.trim();
+      if (value.length < 1) {
+        alert("연구과제를 입력해주세요.");
+      } else {
+        search();
+      }
+    }
+  });
+
+  async function uploadImage(file) {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      previewImage.src = e.target.result;
+      previewImage.style.display = "block";
+      uploadIcon.style.display = "none";
+    }
+    reader.readAsDataURL(file);
+
+    document.getElementById("loader").style.display = "block";
+
+    const res = await fetch("/upload", { method: "POST", body: formData });
+    const data = await res.json();
+    document.getElementById("loader").style.display = "none";
+
+    if (data.query) {
+      queryInput.value = data.query;
+      autoResizeTextarea(queryInput);
+    } else {
+      alert("이미지 분석에 실패했습니다.");
+    }
+  }
+
+  async function aiAssist() {
+    const query = queryInput.value.trim();
+    if (query.length < 1) {
+      alert("문장을 먼저 입력해주세요.");
+      return;
+    }
+
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
+
+    const res = await fetch("/assist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: query })
+    });
+
+    loader.style.display = "none";
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data.query) {
+        queryInput.value = data.query;
+        autoResizeTextarea(queryInput);
+      }
+    } else {
+      alert("AI 어시스트 요청에 실패했습니다.");
+    }
+  }
+
+  async function search() {
+    const query = queryInput.value.trim();
+    const loader = document.getElementById("loader");
+
+    if (query.length < 1) {
+      alert("연구과제를 입력해주세요.");
+      return;
+    }
+
+    resultsDiv.innerHTML = "";
+    loader.style.display = "block";
+
+    const res = await fetch("/recommend", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query })
+    });
+
+    const data = await res.json();
+    loader.style.display = "none";
+
+    if (data.length === 0) {
+      const noResultEl = document.createElement("div");
+      noResultEl.className = "no-result-box";
+      noResultEl.textContent = "매칭된 연구자가 없습니다.";
+      resultsDiv.appendChild(noResultEl);
+      return;
+    }
+
+    data.forEach((item, index) => {
+      const el = document.createElement("div");
+      el.className = "result-box";
+      const totalScore = item.score;
+      const markdown = marked.parse(item.reason_markdown || "- 설명 없음");
+
+      // 논문 링크 리스트 구성 (thesis_id를 쿼리 파라미터로 전달하는 샘플 링크)
+      let papersHtml = '';
+      if (item.top_papers && item.top_papers.length) {
+        papersHtml = '<div class="papers"><b>· 주요 논문(링크):</b><ul>' +
+          item.top_papers.map(p => {
+            const pid = encodeURIComponent(p.thesis_id);
+            const title = (p.title || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            const journal = p.journal || '';
+            const impact = (p.impact || 0).toFixed(2);
+            const url = `/papers/search?q=${pid}`; // 필요 시 실제 논문 상세 URL로 교체
+            return `<li><a href="${url}" target="_blank">${title}</a> (${journal}, IF ${impact})</li>`;
+          }).join('') + '</ul></div>';
+      }
+
+      el.innerHTML = `
+        <h3><a href="javascript:void(0)" onclick="openResearcherModal('${item.researcher_id}')">${index + 1}. ${item.name}</a></h3>
+        <canvas id="scoreChart${index}" width="300" height="100"></canvas>
+        <p><b>· 총점:</b> ${totalScore}점 (기본 ${item.base_score} + 임팩트 ${item.impact_bonus} + 키워드 ${item.keyword_bonus})</p>
+        <p><b>· 연구자 키워드:</b> ${item.research_keywords.join(', ')}</p>
+        <p><b>· 논문 키워드:</b> ${item.paper_keywords.join(', ')}</p>
+        ${papersHtml}
+        <div class="result-markdown">${markdown}</div>
+      `;
+      resultsDiv.appendChild(el);
+
+      const ctx = document.getElementById(`scoreChart${index}`).getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['총점'],
+          datasets: [{
+            label: `${totalScore}점`,
+            data: [totalScore],
+            backgroundColor: '#4285F4'
+          }]
+        },
+        options: {
+          responsive: false,
+          scales: { y: { beginAtZero: true, max: 120 } },
+          plugins: { legend: { display: true } }
+        }
+      });
+    });
+  }
+
+  function clearAll() {
+    queryInput.value = "";
+    previewImage.src = "";
+    previewImage.style.display = "none";
+    uploadIcon.style.display = "block";
+    resultsDiv.innerHTML = "";
+    autoResizeTextarea(queryInput);
+  }
+
+  function safe(v){ return (v ?? '').toString().replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  async function openResearcherModal(id){
+    researcherModalBody.innerHTML = "불러오는 중...";
+    researcherModal.style.display = "flex";
+    try {
+      const res = await fetch(`/researchers/${encodeURIComponent(id)}`);
+      const data = await res.json();
+      if(res.ok){
+        researcherModalBody.innerHTML = `
+          <div><b>연구자명:</b> ${safe(data.name)}</div>
+          <div><b>부서:</b> ${safe(data.department)}</div>
+          <div><b>직급:</b> ${safe(data.position)}</div>
+          <div><b>전화번호:</b> ${safe(data.phone)}</div>
+          <div><b>이메일:</b> ${safe(data.email)}</div>
+          <div><b>전공:</b> ${safe(data.major)}</div>
+          <div><b>연구소/랩:</b> ${safe(data.lab)}</div>
+          <div><b>연구분야:</b> ${safe(data.research_area)}</div>
+          <div><b>커리어 요약:</b><br>${safe(data.career_summary)}</div>
+          <div><b>경력:</b><br>${safe(data.experience)}</div>
+        `;
+      } else {
+        researcherModalBody.innerHTML = `오류: ${safe(data.error || '정보를 불러오지 못했습니다.')}`;
+      }
+    } catch(e){
+      researcherModalBody.innerHTML = "오류가 발생했습니다.";
+    }
+  }
+  function closeResearcherModal(){ researcherModal.style.display = "none"; }
+</script>
+</body>
+</html>

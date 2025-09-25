@@ -1,0 +1,1482 @@
+{
+  "sheets": {
+    "연구자": {
+      "n_rows": 280,
+      "n_cols": 13,
+      "duplicate_rows": 0,
+      "columns": {
+        "사용자번호": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 280,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "1635",
+            "1736",
+            "1840",
+            "1847",
+            "1848"
+          ],
+          "frequent_values": {
+            "1635": 1,
+            "1736": 1,
+            "1840": 1,
+            "1847": 1,
+            "1848": 1,
+            "1779": 1,
+            "1664": 1,
+            "1685": 1,
+            "1811": 1,
+            "11486": 1,
+            "11594": 1,
+            "1745": 1,
+            "2690": 1,
+            "1624": 1,
+            "11458": 1,
+            "1680": 1,
+            "2797": 1,
+            "1759": 1,
+            "1876": 1,
+            "1864": 1
+          },
+          "numeric_stats": {
+            "min": 1612.0,
+            "p5": 1629.9,
+            "mean": 3106.089285714286,
+            "p95": 11639.4,
+            "max": 11842.0,
+            "std": 3322.2269557631803
+          },
+          "outliers_>|z|>=3": 0
+        },
+        "연구자명": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 263,
+          "unique_ratio": 0.939286,
+          "sample_values": [
+            "조승차",
+            "조성호",
+            "조사빈",
+            "조범유",
+            "조마윤"
+          ],
+          "frequent_values": {
+            "없음": 18,
+            "안하가": 1,
+            "신태재": 1,
+            "강건은": 1,
+            "조승차": 1,
+            "조성호": 1,
+            "조사빈": 1,
+            "조범유": 1,
+            "정은이": 1,
+            "오아준": 1,
+            "오승다": 1,
+            "강윤건": 1,
+            "강유원": 1,
+            "오성호": 1,
+            "오서찬": 1,
+            "강원하": 1,
+            "오라찬": 1,
+            "안현차": 1,
+            "안한태": 1,
+            "강원조": 1
+          },
+          "text_length": {
+            "min": 2,
+            "p5": 2,
+            "mean": 2.9357142857142855,
+            "p95": 3,
+            "max": 3
+          }
+        },
+        "소속": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 30,
+          "unique_ratio": 0.107143,
+          "sample_values": [
+            "항해융합학부",
+            "해양스포츠과학과",
+            "해사법학부",
+            "해양행정학과",
+            "해양행정학과"
+          ],
+          "frequent_values": {
+            "기관시스템공학부": 37,
+            "항해융합학부": 34,
+            "전자전기정보공학부": 32,
+            "기계공학부": 14,
+            "해사인공지능·보안학부": 11,
+            "국제무역경제학부": 10,
+            "해양과학융합학부": 10,
+            "해양경찰학부": 10,
+            "조선해양시스템공학부": 9,
+            "해사법학부": 8,
+            "인공지능공학부": 8,
+            "해양건축공학과": 8,
+            "해운경영학부": 7,
+            "물류시스템공학과": 7,
+            "해양영어영문학과": 6,
+            "해양신소재융합공학과": 6,
+            "환경공학과": 6,
+            "해양과학기술융합학과": 6,
+            "토목공학과": 6,
+            "국제해양문제연구소": 6
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 5,
+            "mean": 7.360714285714286,
+            "p95": 10,
+            "max": 11
+          }
+        },
+        "직급": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 3,
+          "unique_ratio": 0.010714,
+          "sample_values": [
+            "교수",
+            "교수",
+            "교수",
+            "교수",
+            "교수"
+          ],
+          "frequent_values": {
+            "교수": 169,
+            "부교수": 62,
+            "조교수": 49
+          },
+          "text_length": {
+            "min": 2,
+            "p5": 2,
+            "mean": 2.3964285714285714,
+            "p95": 3,
+            "max": 3
+          }
+        },
+        "연락처": {
+          "dtype": "object",
+          "nulls": 6,
+          "unique": 203,
+          "unique_ratio": 0.740876,
+          "sample_values": [
+            "051-1600-6937",
+            "051-1600-6937",
+            "051-1600-6937",
+            "051-1600-6937",
+            "051-1600-6937"
+          ],
+          "frequent_values": {
+            "051-1600-6937": 72,
+            "051-410-4592": 1,
+            "051-410-4285": 1,
+            "051-410-4583": 1,
+            "051-410-5248": 1,
+            "051-410-4364": 1,
+            "051-410-4692": 1,
+            "051-410-4591": 1,
+            "051-410-4754": 1,
+            "051-410-4280": 1,
+            "051-410-4425": 1,
+            "051-410-4367": 1,
+            "051-410-4311": 1,
+            "051-410-4436": 1,
+            "051-410-4587/ 010-5533-9443": 1,
+            "051-410-4579": 1,
+            "051-410-4457": 1,
+            "051-410-4329": 1,
+            "051-410-4232": 1,
+            "051-410-4588": 1
+          },
+          "text_length": {
+            "min": 12,
+            "p5": 12,
+            "mean": 12.492700729927007,
+            "p95": 13,
+            "max": 27
+          }
+        },
+        "이메일": {
+          "dtype": "object",
+          "nulls": 2,
+          "unique": 161,
+          "unique_ratio": 0.579137,
+          "sample_values": [
+            "idino@idino.co.kr",
+            "idino@idino.co.kr",
+            "idino@idino.co.kr",
+            "idino@idino.co.kr",
+            "idino@idino.co.kr"
+          ],
+          "frequent_values": {
+            "idino@idino.co.kr": 118,
+            "srshin@kmou.ac.kr": 1,
+            "syran@kmou.ac.kr": 1,
+            "shinn21@kmou.ac.kr": 1,
+            "yjshin61@kmou.ac.kr": 1,
+            "shinjy@kmou.ac.kr": 1,
+            "joonoos@kmou.ac.kr": 1,
+            "chshin@kmou.ac.kr": 1,
+            "think@kmou.ac.kr": 1,
+            "jhsim@kmou.ac.kr": 1,
+            "gasirian@kmou.ac.kr": 1,
+            "sbahn@kmou.ac.kr": 1,
+            "yjahn0726@kmou.ac.kr": 1,
+            "ahnwoonghee@kmou.ac.kr": 1,
+            "ahnhs@kmou.ac.kr": 1,
+            "myang@kmou.ac.kr": 1,
+            "ihyang@kmou.ac.kr": 1,
+            "yanghyun@kmou.ac.kr": 1,
+            "E-mailbyea@kmou.ac.kr": 1,
+            "tecton@kmou.ac.kr": 1
+          },
+          "text_length": {
+            "min": 14,
+            "p5": 15,
+            "mean": 17.176258992805757,
+            "p95": 20,
+            "max": 24
+          }
+        },
+        "전공": {
+          "dtype": "object",
+          "nulls": 12,
+          "unique": 257,
+          "unique_ratio": 0.958955,
+          "sample_values": [
+            "선박운항",
+            "형사법, 법철학",
+            "행정학(지방행정, 지방재정, 재무행정)",
+            "행정학(정책분석 및 정책평가, 환경규제정책, 성과관리)",
+            "초고주파회로(Microwave Circuit)"
+          ],
+          "frequent_values": {
+            "해운경영": 4,
+            "해사법": 2,
+            "해사정보공학(Maritime Information Engineering)": 2,
+            "선박전기전자제어공학": 2,
+            "컴퓨터공학": 2,
+            "국제법(International law)": 2,
+            "연소공학": 2,
+            "응용미시경제학(applied microeconomics)": 2,
+            "해사법(Maritime Law)": 2,
+            "선박 설계 및 생산": 1,
+            "형사법": 1,
+            "행정학(정책이론)": 1,
+            "통상정책": 1,
+            "열공학(열전달), 열유체공학": 1,
+            "해양구조진동소음 및 해양로봇": 1,
+            "프랑스언어학, 프랑스지역학": 1,
+            " 연소공학": 1,
+            "경찰행정법": 1,
+            "로봇공학 (Robotics) ": 1,
+            "해사커뮤니케이션 (문화간커뮤니케이션, 조직인류학)": 1
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 4,
+            "mean": 25.317164179104477,
+            "p95": 67,
+            "max": 188
+          }
+        },
+        "연구실 위치": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 280,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "연구실1호",
+            "연구실2호",
+            "연구실3호",
+            "연구실4호",
+            "연구실5호"
+          ],
+          "frequent_values": {
+            "연구실1호": 1,
+            "연구실2호": 1,
+            "연구실3호": 1,
+            "연구실4호": 1,
+            "연구실5호": 1,
+            "연구실6호": 1,
+            "연구실7호": 1,
+            "연구실8호": 1,
+            "연구실9호": 1,
+            "연구실10호": 1,
+            "연구실11호": 1,
+            "연구실12호": 1,
+            "연구실13호": 1,
+            "연구실14호": 1,
+            "연구실15호": 1,
+            "연구실16호": 1,
+            "연구실17호": 1,
+            "연구실18호": 1,
+            "연구실19호": 1,
+            "연구실20호": 1
+          },
+          "text_length": {
+            "min": 5,
+            "p5": 6,
+            "mean": 6.614285714285714,
+            "p95": 7,
+            "max": 7
+          }
+        },
+        "실험실": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 280,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "실험실1",
+            "실험실2",
+            "실험실3",
+            "실험실4",
+            "실험실5"
+          ],
+          "frequent_values": {
+            "실험실1": 1,
+            "실험실2": 1,
+            "실험실3": 1,
+            "실험실4": 1,
+            "실험실5": 1,
+            "실험실6": 1,
+            "실험실7": 1,
+            "실험실8": 1,
+            "실험실9": 1,
+            "실험실10": 1,
+            "실험실11": 1,
+            "실험실12": 1,
+            "실험실13": 1,
+            "실험실14": 1,
+            "실험실15": 1,
+            "실험실16": 1,
+            "실험실17": 1,
+            "실험실18": 1,
+            "실험실19": 1,
+            "실험실20": 1
+          },
+          "text_length": {
+            "min": 4,
+            "p5": 5,
+            "mean": 5.614285714285714,
+            "p95": 6,
+            "max": 6
+          }
+        },
+        "웹사이트": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 1,
+          "unique_ratio": 0.003571,
+          "sample_values": [
+            "http://www.idino.co.kr",
+            "http://www.idino.co.kr",
+            "http://www.idino.co.kr",
+            "http://www.idino.co.kr",
+            "http://www.idino.co.kr"
+          ],
+          "frequent_values": {
+            "http://www.idino.co.kr": 280
+          },
+          "text_length": {
+            "min": 22,
+            "p5": 22,
+            "mean": 22.0,
+            "p95": 22,
+            "max": 22
+          }
+        },
+        "주요약력": {
+          "dtype": "object",
+          "nulls": 3,
+          "unique": 275,
+          "unique_ratio": 0.99278,
+          "sample_values": [
+            "2002 한국해양대학교 해사수송과학부 해사정보공학 공학사",
+            "1990 동아대학교 체육학과(체육학사)\n1992 동아대학교 일반대학원(체육학석사)\n1997 동아대학교 일반대학원(이학박사)",
+            "1991년 3월 ～ 1999년 2월  \t중앙대학교 법과대학 법학과 \n1999년 3월 ～ 2001년 8월  \t중앙대학교 대학원 법학과\n2003년 8월 ～ 2005년 3월  \t미국 인디애나 대학교 로스쿨 법학석사(LL.M.)\n2005년 1월 ～ 2007년 7월    미국 인디애나 대학교 로스쿨 법학박사(S.J.D.)",
+            "서울대학교 대학원 행정학과 행정학 박사(1999.08)",
+            "1990 경북대학교 법과대학 행정학과(행정학 학사)\n1994 서울대학교 행정대학원(행정학 석사)\n2001 서울대학교 대학원 행정학과(행정학 박사)"
+          ],
+          "frequent_values": {
+            "서울대학교 공과대학 자원공학과 공학사\n서울대학교 대학원 공학석사\n서울대학교 대학원 공학박사": 2,
+            "● 한국과학기술원 공학박사": 2,
+            "1991년 3월 ～ 1999년 2월  \t중앙대학교 법과대학 법학과 \n1999년 3월 ～ 2001년 8월  \t중앙대학교 대학원 법학과\n2003년 8월 ～ 2005년 3월  \t미국 인디애나 대학교 로스쿨 법학석사(LL.M.)\n2005년 1월 ～ 2007년 7월    미국 인디애나 대학교 로스쿨 법학박사(S.J.D.)": 1,
+            "1985 대구대학교 법학과 졸업\n1990 고려대학교 대학원 법학과 졸업(법학석사)\n1997 고려대학교 대학원 법학과 졸업(법학박사)": 1,
+            "- 부산대학교 사학과 학사\n- 부산대학교 대학원 문학석사\n- 부산대학교 대학원 문학박사": 1,
+            "2002 한국해양대학교 해사수송과학부 해사정보공학 공학사": 1,
+            "1984년 고려대학교 법과대학 행정학과 졸업(행정학학사)\n1987년 고려대학교 대학원 행정학과 졸업(행정학석사)\n1996년 고려대학교 대학원 행정학과 졸업(행정학박사)": 1,
+            "1988 부산대학교 경제학 학사 \n1990 부산대학교 대학원 경제학 석사 \n1997 부산대학교 대학원 경제학 박사 ": 1,
+            "한국해양대학교 기관시스템공학 공학사\n한국해양대학교 열유체공학 공학석사\n한국해양대학교 열공학 공학박사": 1,
+            "2013.3 일본 요코하마국립대학교 기계재료공학과 (공학사)\n2020.2 서울대학교 조선해양공학과 (공학박사)": 1,
+            "부산대학교 불어교육학과 \n부산대학교 교육대학원 불어교육학전공 교육학석사 \n부산대학교 인문대학원 불어불문학전공 불어학박사 수료 \n프랑스 스트라스부르II대학 불어학 석사 \n프랑스 스트라스부르II대학 불어학 박사 ": 1,
+            "2011 성균관대학교 경제대학 경제학과(경제학사)\n2013 고려대학교 일반대학원 경제학과(경제학석사)\n2019 고려대학교 일반대학원 경제학과(경제학박사)": 1,
+            " 1996.2 한국해양대학교 기관시스템공학부 공학사 \n2000.2 한국해양대학교 기관공학과 공학석사 \n2005.3 일본북해도대학 공학박사": 1,
+            "1991  국립경찰대학교 행정학과 (행정학사)\n2003  프랑스 몽펠리에1대학교 정보처리와 법 (법학석사)\n2007  프랑스 몽펠리에1대학교 정보처리와 법 (법학박사)": 1,
+            "1998 한국해양대학교 제어계측공학과 공학사\n2000 한국해양대학교 제어계측공학과 공학석사\n2004 Tokyo Institute of Technology 공학박사": 1,
+            "부산외국어대학교 독일어과 (교직) 학사 \n연세대학교 대학원 독어독문학과 문학전공 (커뮤니케이션 연구) 석사 \n독일 LMU 뮌헨대학교 문화간 커뮤니케이션, 조직인류학 박사": 1,
+            "수산학사 부경대학교 수산과학대학 양식생물학 1990. 2. 24\n수산학석사 부경대학교 수산생물학과 어류생리학 1995. 8. 30\nChange of Serum Vitellogenin during the Annual Reproductive Cycle of Fusilier, Caesio diagramma\n수산학박사 일본 동경해양대학 수산학연구과 어류내분비학 1999. 3. 25\nMolecular Characterization and Correlation with Acquisition of Oocyte Maturational Competence during Sexual Maturation in Marine Fishes": 1,
+            "고려대학교 기계공학 (공학사)\nUniv. of South Carolina 기계공학 (공학석사)\nNorth Carolina State Univ. 로보틱스 및 제어공학 (공학박사)": 1,
+            "2007. 미국 시애틀대학교 법과대학원 미국법 석사 \n1994. 고려대학교 법학박사: 국제법\n1990. 고려대학교 법학석사: 국제법\n1988. 한국해양대학교 법학사: 해사법 \n": 1,
+            "2003-2009 Victoria University of Wellington, New Zealand Ph. D, Applied Linguistics\n\n1998-2000 Northeastern Illinois University, Chicago, USA Master's, Linguistics/TESOL\n\n1991-1997 Columbia College Chicago, USA BA, Music Composition": 1
+          },
+          "text_length": {
+            "min": 4,
+            "p5": 36,
+            "mean": 102.67509025270758,
+            "p95": 232,
+            "max": 503
+          }
+        },
+        "주요경력": {
+          "dtype": "object",
+          "nulls": 3,
+          "unique": 277,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "- 2002.03 - 2009.11 : Chemical Tanker  항해사\n- 2009.12 - 2020.02  : Chemical/Product/Oil Tanker  선장\n- 2020.03 - 현재  : 한국해양대학교  부교수",
+            "2019. 11. ~\n現 한국해양대학교 평생교육원장\n2015. 10. 1 ~\n現 한국해양대학교 해양스포츠과학과 교수\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 교육대학원 체육교육전공 주임교수\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 체육부장\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 해양체육학과 학과장\n2009. 10. 1 ∼ 2015. 9. 30\n한국해양대학교 해양체육학과 부교수\n2010. 10. 1∼ 2012. 3. 5\n한국해양대학교 학생처 부처장\n2005. 10. 1 ∼ 2009. 9. 30\n한국해양대학교 해양체육학과 조교수\n2006. 3. 1 ∼ 2010. 2. 28\n한국해양대학교 해양체육학과 학과장\n2003. 4 ∼ 2005. 9\n한국해양대학교 해양체육학과 전임강사\n2001. 3 ∼ 2002. 2\n한국해양대학교 전임연구교수",
+            "2007년 12월 ~ 2011년 2월     한국형사정책연구원 부연구위원\n2008년 9월 ~ 2008년 12월     중앙대학교, 건국대학교, 단국대학교 시간강사\n2010년 8월 ~ 2013년 8월      대법원 양형위원회 전문위원\n2010년 7월 ~ 현재\t              법무부 법무연수원 심사위원\n2016년 \t\t\t                        사법시험 출제\n2011년 3월 ~ 현재          \t      한국해양대학교 해사법학부 교수\n2019년 1월 ~ 2020년 7월     미국 인디애나대학교 로스쿨 방문학자\n2022.1월~ 현재                        부산 고등검찰청 상고심사위원회\n2024년 3월 ~ 현재                   부산세관 관세범칙조사심의위원회 위원\n2024년 12월                              한국비교형사법학회 해전학술상 수상  \n2024년                           ",
+            "한국해양대학교 해양행정학과 교수(2001 - 현재) \n한국해양대학교 해양행정학과 학과장(2009 - 2010)\n부산분권혁신운동본부 정책위원장(2010 - 현재)\nIndiana University 객원교수(2007 - 2008)\n서울대학교 한국행정연구소 특별연구원(1999 - 2001) \n연구관련 수상경력\n - 학술상(우수논문상 부문), 한국지방정부학회(2010)\n - Certificate of Achievement, Indianal University (2008)",
+            "1994 - 1996 서울시정개발연구원 위촉연구원\n2001 - 2003 서울대학교 BK21사업단 Post-Doc.\n2003 - 2004 한국행정연구원 수석연구원\n2001 - 2002 경기도 환경정책과 환경정책 자문위원\n2004 - 2004. 노동부 목표관리(MBO)위원회 자문위원\n2004 - 2005. 노동부 자체평가위원회 평가위원\n2004 - 2007. 현재 특허청 자체평가위원회 평가위원\n2004. 03 - 현재 한국해양대학교 해양행정학과 교수"
+          ],
+          "frequent_values": {
+            "- 2002.03 - 2009.11 : Chemical Tanker  항해사\n- 2009.12 - 2020.02  : Chemical/Product/Oil Tanker  선장\n- 2020.03 - 현재  : 한국해양대학교  부교수": 1,
+            "2019. 11. ~\n現 한국해양대학교 평생교육원장\n2015. 10. 1 ~\n現 한국해양대학교 해양스포츠과학과 교수\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 교육대학원 체육교육전공 주임교수\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 체육부장\n2014. 3. 1 ∼ 2016. 2. 28\n한국해양대학교 해양체육학과 학과장\n2009. 10. 1 ∼ 2015. 9. 30\n한국해양대학교 해양체육학과 부교수\n2010. 10. 1∼ 2012. 3. 5\n한국해양대학교 학생처 부처장\n2005. 10. 1 ∼ 2009. 9. 30\n한국해양대학교 해양체육학과 조교수\n2006. 3. 1 ∼ 2010. 2. 28\n한국해양대학교 해양체육학과 학과장\n2003. 4 ∼ 2005. 9\n한국해양대학교 해양체육학과 전임강사\n2001. 3 ∼ 2002. 2\n한국해양대학교 전임연구교수": 1,
+            "2007년 12월 ~ 2011년 2월     한국형사정책연구원 부연구위원\n2008년 9월 ~ 2008년 12월     중앙대학교, 건국대학교, 단국대학교 시간강사\n2010년 8월 ~ 2013년 8월      대법원 양형위원회 전문위원\n2010년 7월 ~ 현재\t              법무부 법무연수원 심사위원\n2016년 \t\t\t                        사법시험 출제\n2011년 3월 ~ 현재          \t      한국해양대학교 해사법학부 교수\n2019년 1월 ~ 2020년 7월     미국 인디애나대학교 로스쿨 방문학자\n2022.1월~ 현재                        부산 고등검찰청 상고심사위원회\n2024년 3월 ~ 현재                   부산세관 관세범칙조사심의위원회 위원\n2024년 12월                              한국비교형사법학회 해전학술상 수상  \n2024년                           ": 1,
+            "한국해양대학교 해양행정학과 교수(2001 - 현재) \n한국해양대학교 해양행정학과 학과장(2009 - 2010)\n부산분권혁신운동본부 정책위원장(2010 - 현재)\nIndiana University 객원교수(2007 - 2008)\n서울대학교 한국행정연구소 특별연구원(1999 - 2001) \n연구관련 수상경력\n - 학술상(우수논문상 부문), 한국지방정부학회(2010)\n - Certificate of Achievement, Indianal University (2008)": 1,
+            "1994 - 1996 서울시정개발연구원 위촉연구원\n2001 - 2003 서울대학교 BK21사업단 Post-Doc.\n2003 - 2004 한국행정연구원 수석연구원\n2001 - 2002 경기도 환경정책과 환경정책 자문위원\n2004 - 2004. 노동부 목표관리(MBO)위원회 자문위원\n2004 - 2005. 노동부 자체평가위원회 평가위원\n2004 - 2007. 현재 특허청 자체평가위원회 평가위원\n2004. 03 - 현재 한국해양대학교 해양행정학과 교수": 1,
+            "1996. 3 - 1998. 2 한국해양대학교 전파공학과 전임강사\n1998. 3 - 2002. 2 한국해양대학교 전파공학과 조교수 \n2002. 3 - 2007. 3 한국해양대학교 전파공학과 부교수 \n2007. 4 - 현재 한국해양대학교 전파공학과 교수\n2008. 8 - 2009. 2 영국 카디프 대학 방문교수": 1,
+            "○  주요이력\n· 2004  ~ 2007 : (주)현대상선 / 엔지니어  \n· 2013  ~ 2014 : SK Innovation 대덕기술원 / 선임연구원 (최연소 Project Leader)\n· 2014  ~ 2018 : 한국해양대학교 기관공학부 / 조교수\n· 2015  ~ 현재 : 한국마린엔지니어링학회 / 편집이사, 편집위원\n· 2017  ~ 2020 : 대한기계학회 / 부산지회임원\n· 2018  ~ 2022 : 한국해양대학교 기관공학부/ 부교수\n· 2018  ~ 2020 : 한국정보통신학회 / 교육이사\n· 2018  ~ 2020 : 한국해양대학교 / 산학협력단 부단장, 연구감사실장, 종합실험실습관장\n· 2019  ~ 현재 : 한국해양환경안전학회 / 편집위원\n· 2020  ~ 현재 : Royal Society of Chemistry (영국왕립화학회) / Reviewer panel\n· 2020  ~ 2021 : 한국해양대학교 / 기획처 대외협력 부처장\n· 2021  ~ 2024 :": 1,
+            "2001.9 - 2002.2 한국과학재단 신진연구자\n2002.2 - 2007.9 경상대학교 계약교수/연구교수\n2007.10 - 2013.7 한국선급 책임/수석연구원\n\n2009 지식경제부 2010년 산업기술 중장기전략수립(조선해양 산업원천 기술로드맵) 기획위원\n2009 지식경제부 2010년 산업원천기술개발사업 기획위원\n2010 지식경제부 2010년 크루즈선 기반기술개발사업 기획위원(2단계)\n2010 국토해양부 2010년 해양안전기술 중장기 계획수립(해사산업분과) 기획위원\n2010 지식경제부 2011년 산업융합원천기술개발사업 후보과제 기획위원\n2011 지식경제부 2011년 산업기술로드맵(조선해양분과) 기획위원\n2011 국토해양부(KIMST) 2011년 해양연구기획사업 자문위원\n2011 지식경제부 2012년 산업융합원천기술개발사업 과제기획위원\n2012 지식경제부 2012년 중소기업기술개발 미래선도 과제기획위원\n2012 지식경제부 2013년 산업융합원천기술개발사업 과제기획위원\n2013 ": 1,
+            "[교내]\n1. 산학협력단장 \n2. LINC+사업단장\n\n[교외] \n한국건설기술연구원 품질검사전문기관 자문위원회 위원\n한국건설기술연구원 철강구조물제작 공장 인증심사업무 심의위원 및 공장심사반 심사위원\n울산광역시 지방건설기술 심의위원회 위원\n한국철도시설공단 기술자문위원회 위원\n부산교통공사 건설분야 기술자문위원회 위원\n창원시 설계자문위원회 위원\n부산항건설사무소 기술자문위원회 위원": 1,
+            "2010~2016 삼성경제연구소 선임연구원\n2022~2023 연세대학교 경제학과 강사 \n2024~현재  국립한국해양대학교 국제무역경제학부 조교수": 1,
+            "- Feb. 4, 2025 - Present. Junior Member. Commission B2, International Institute of Refrigeration (IIR).\n- Sept. 1, 2024 - Present. Assistant Professor, Division of Mechanical Engineering, Korea Maritime and Ocean University, Busan, Republic of Korea\n- Mar. 1, 2023 - Aug. 31, 2024. Research Professor. BKFOUR Education and Research Center for Advanced Machinery and Materials, School of Mechanical Engineering, Pusan National University, Busan, Republic of Korea\n- Nov. 8, 2021 - Jan. 20, 2023, Senior Enginee": 1,
+            " - 2015-2017 Post-Doc. (University of Victoria)\n - 2018-현재 한국해양대학교 기계공학부 조교수,부교수": 1,
+            "   2023 ~ 현 재   한국해양대학교 해사법학부 교수\n   2007 ~ 2023   선문대학교 법경찰학과 교수\n   2015                  단국대학교 강사\n   2015 ~ 2018   한국외국어대학교 강사\n   2006 ~ 2007   한국소비자원 정책연구실 선임연구원\n   2005 ~ 2006   부경대학교 법학연구소 전임연구교수 \n   2000 ~ 2007   한국해양대학교 강사\n   2002 ~ 2007   부경대학교 강사\n   2005                  동의대학교 강사\n   2006                 신라대학교 강사 등\n\n   2018 ~ 현재   소비자정책위원회 전문위원회 전문위원(현)\n   2021 ~ 현재   전자문서ㆍ전자거래분쟁조정위원회 조정위원(현)\n   2018 ~ 현재   한국소비자단체협의회 자율분쟁조정위원회 조정위원(현)\n   2014 ~ 현재   한국메타버스산업협회 상생협력위원회 위원(현)\n   2018 ~ ": 1,
+            " - 2001.3~ : 한국해양대학교 항해융합학부 교수\n - 2022.12~ : 해양수산부 해양수산안전 자문위원\n - 2013.11~ : 한국선급 기술위원회 위원\n                          한국선급 검사전문위원장\n - 2019.1~2020.12 : 한국마린엔지니어링학회 부회장\n - 2019.1~2020.12 : 한국해군과학기술학회 부회장\n - 2018.11~2021.6 : 부산항발전협의회 정회원\n - 2018.4~2021.4 : 해양경찰청 정책자문위원\n - 2018.4~2020.6 : 한국조선해양기자재연구원 원장\n - 2017.7~2017.12 : 국민안전처 재난 및 안전관리 평가위원회 위원\n - 2017.4~2018.8 : 세월호 선체조사위원회 위원\n - 2016.8~2018.4 : 한국해양대학교 운항훈련원 원장\n - 2014.10~2014.12 : 안전행정부 안전혁신 마스터플랜 민간자문단 위원\n - 2014.6~2014.10 : 안전행정부 직제개편위원회 위원": 1,
+            "조교수, 한국해양대학교 기계공학부 (2024 - 현재)\n선임연구원, 국방과학연구소 소재에너지센터 (2023-2024)\n박사후연구원, 한국과학기술연구원(KIST) 에너지소재센터 (2022-2023)\nStaff Engineer, 삼성전자 반도체연구소 Logic CVD (2021-2022)\nTL(CL4), SK하이닉스 미래기술연구원 DRAM Diffusion (2020-2021)": 1,
+            "1998.3 ~ 현재\n한국해양대학교 해양경찰학과 교수\n2020.1 ~ 현재\n한국항해항만학회 학회장\n2016.6 ~ 현재\nIALA World-Wide Academy(WWA) 운영이사회 의장\n2016.3 ~ 현재\nIALA World-Wide Academy(WWA) 항로표지관리자 과정 과정감독자 및 평가자\n2015.12 ~ 현재\nIALA WWA 운영이사회 운영이사\n2011.06. ~ 현재\n해사산업연구소 항로표지연구사업단 단장\n2005.10 ~ 현재\n극동전파표지협의회(FERNS) Technical Working Group 의장\n2020.5 ~ 현재\n해양경찰청 방제기술지원협의회 위원\n2020.5 ~ 현재\n해양경찰청 중앙해양특수구조단 보통징계위원회 민간위원\n2021.3 ~ 현재\n한국해양대학교 해양경찰학부 학부장\n2018.7 ~ 2018.10\n항로표지기술원 이사회 비상임이사\n2017.2 ~ 2019.2\n한국해양대학교 해양경찰학과 학과장\n2016.1 ~ 2017.6\n해양경비": 1,
+            "2023.9~현재한국해양대학교동아시아학과부교수\n2018.10-2023.8한국해양대학교국제해양문제연구소HK연구교수\n2018.2-2018.9부경대학교인문사회과학연구소HK연구교수\n2012.6-2018.1한국해양대학교국제해양문제연구소HK연구교수": 1,
+            "1996 ~ 현재  한국해양대학교 전기전자공학부 교수\n1996 ~ 현재   대한전기학회, 한국조명전기설비학회, 한국철도학회, 한국전기전자재료학회, \n                          한국조선해양IT학회(회원, 임원, 부회장 및 회장 역임)  \n2005 ~ 현재   국토교통부 철도기술전문위원회 전문위원\n2007 ~ 현재   부산광역시 건설심의위원회 위원\n2008 ~ 현재   한국해양대학교 해양조명？전력IT센터 소장\n2014 ~ 2021  부산교통공사 기술 및 경영자문위원\n2015 ~ 2017  (사)부산산학융합원 원장\n2015 ~ 현재    소방안전본부 화재조사전문위원\n2022 ~ 현재    부산경찰청 과학수사포럼 회장": 1,
+            "- 부산시사·김해시사편찬위원회 위원(~현재)\n- 군사·항도부산·효원사학 편집위원(~현재)\n- 한국해양대학교 국제해양문제연구소 인문한국교수(2014.03~2020.08)\n- 동서대학교 교양교육원 초빙조교수(2010.04.~2013.08.)\n- 동명대학교 영상애니메이션학과 전임강사(2006.03.~2009.02.)\n- 울산대학교 인문과학연구소 연구교수(2002.08.~2005.07.)\n- 경성대, 한국해양대, 부산대, 부경대, 동서대, 영산대 강사(1991.03.~2006.02.)": 1,
+            "現) \n한국해양대학교 교직과 교수 \n교양교육원장\n부산대 지역혁신역량교육연구센터 전문위원\n\n前)\n한국해양대학교 교수학습지원센터장 \n한국청소년정책연구원 연구위원, 활동평가정책연구팀장 \n국가청소년위원회 정책자문위원 \n국가청소년위원회 청소년육성기금지원사업평가위원 \n국가청소년위원회 청소년시설평가 위원 \n서울특별시 청소년활동 프로그램 평가위원 \n청소년지도사 자격검정 및 문제출제위원 \n한국방송통신대학교 원격교육연구소 전임연구원 \nSFU(Simon Fraser University) 교환교수 (2016.9 ~ 2017.8)": 1
+          },
+          "text_length": {
+            "min": 12,
+            "p5": 52,
+            "mean": 249.1263537906137,
+            "p95": 501,
+            "max": 509
+          }
+        },
+        "연구분야": {
+          "dtype": "object",
+          "nulls": 9,
+          "unique": 271,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "지구성 트레이닝이 혈중 항산화효소 활성 및 MDA생성에 관한 연구\n근저항 트레이닝이 혈중과산화지질 및 항산화효소 농도에 관한 연구\n멜라토닌의 투여가 Treadmill을 이용한 점증적 최대운동 시 세포막 손상에 관한 연구\n트레이닝의 형태가 기초체력요인 및 수영기록에 관한 연구\nWindsurfing의 장비와 기술에 관한 연구\n조정(Rowing)의 장비와 기술에 관한 연구\n이외 다수",
+            "논    문 :\n- 미국의 사형법에 대한 연구, 법학논문집 제31권 제1호 (2007)\n- 임의수사에 있어서 자발성에 대한 연구, 중앙법학 제9집 제3호 (2007)\n- 미국의 양형가이드라인에 대한 비판적 고찰, 영남법학 제26권 (2008)\n- 비례의 원칙에 대한 비판적 분석: 미국의 논의를 중심으로, 형사정책연구 제20권 제1호 (2009)\n- 형사상 조정제도의 목적에 따른 분류와 그 절차적 함의: 미국의 논의를 중심으로, 피해자학 연구 제17권 제1호 (2009)\n- 피학대여성의 행위에 대한 가벌성 검토에 있어 피학대여성증후군의 가치에 대한 연구, 피해자학 연구 제18권 제1호 (2010)\n- 권리·권한 실행 의사표시의 협박죄 성립, 형사판례연구 제19권, (2011)\n- 형사절차상 과학증거 활용과 관련한 시각의 전환, 중앙법학 제14집 제1호 (2012)\n- 대법원 양형기준에 대한 비판적 고찰, 형사법연구 제24권 제1호 (2012)\n- 과학증거의 자유심증주의 제한에 대한 비판적",
+            "연구분야: 지방자치행정, 지방재정, 정부예산.\n주요저서\n - 현대재무행정이론, 대영문화사, 2007\n - 재무행정론, 범신사, 2003",
+            "저서\n- 정책평가와 성과관리, 대영문화사, 2006\n\n연구논문\n- 한국지방정치의 실증연구에 관한 비판적 고찰, 행정논총 제39권2호, 2001\n- 주민자치센터의 현황분석과 향후과제, 한국사회와 행정연구 제12권4호, 2002\n- 정책변동의 정책네트워크 이론적 분석, 한국사회와 행정연구 제13권1호, 2002\n- The Characteristics of Green Belts Land-Use Regulations in Seoul Metropolitan Areas, The Korean Journal of Policy Studies ⅹⅶ(1): 85-96, 2002\n- 청계천복원의 환경정책적 함의, 한국사회와 행정연구 제13권3호, 2002\n- 주민자치센터평가와 지역공동체구축에 관한 연구, 행정논총 제41권2호, 2003\n- 정부업무평가제도와 MBO의 연계방안, 한국행정연구 제13권2호, 2004\n- 투명성 확보를 위한 인사운영시스템의 평가, 한국사회와 행정연구 제15권3호, 2004\n- ",
+            "초고주파회로"
+          ],
+          "frequent_values": {
+            "지구성 트레이닝이 혈중 항산화효소 활성 및 MDA생성에 관한 연구\n근저항 트레이닝이 혈중과산화지질 및 항산화효소 농도에 관한 연구\n멜라토닌의 투여가 Treadmill을 이용한 점증적 최대운동 시 세포막 손상에 관한 연구\n트레이닝의 형태가 기초체력요인 및 수영기록에 관한 연구\nWindsurfing의 장비와 기술에 관한 연구\n조정(Rowing)의 장비와 기술에 관한 연구\n이외 다수": 1,
+            "논    문 :\n- 미국의 사형법에 대한 연구, 법학논문집 제31권 제1호 (2007)\n- 임의수사에 있어서 자발성에 대한 연구, 중앙법학 제9집 제3호 (2007)\n- 미국의 양형가이드라인에 대한 비판적 고찰, 영남법학 제26권 (2008)\n- 비례의 원칙에 대한 비판적 분석: 미국의 논의를 중심으로, 형사정책연구 제20권 제1호 (2009)\n- 형사상 조정제도의 목적에 따른 분류와 그 절차적 함의: 미국의 논의를 중심으로, 피해자학 연구 제17권 제1호 (2009)\n- 피학대여성의 행위에 대한 가벌성 검토에 있어 피학대여성증후군의 가치에 대한 연구, 피해자학 연구 제18권 제1호 (2010)\n- 권리·권한 실행 의사표시의 협박죄 성립, 형사판례연구 제19권, (2011)\n- 형사절차상 과학증거 활용과 관련한 시각의 전환, 중앙법학 제14집 제1호 (2012)\n- 대법원 양형기준에 대한 비판적 고찰, 형사법연구 제24권 제1호 (2012)\n- 과학증거의 자유심증주의 제한에 대한 비판적": 1,
+            "연구분야: 지방자치행정, 지방재정, 정부예산.\n주요저서\n - 현대재무행정이론, 대영문화사, 2007\n - 재무행정론, 범신사, 2003": 1,
+            "저서\n- 정책평가와 성과관리, 대영문화사, 2006\n\n연구논문\n- 한국지방정치의 실증연구에 관한 비판적 고찰, 행정논총 제39권2호, 2001\n- 주민자치센터의 현황분석과 향후과제, 한국사회와 행정연구 제12권4호, 2002\n- 정책변동의 정책네트워크 이론적 분석, 한국사회와 행정연구 제13권1호, 2002\n- The Characteristics of Green Belts Land-Use Regulations in Seoul Metropolitan Areas, The Korean Journal of Policy Studies ⅹⅶ(1): 85-96, 2002\n- 청계천복원의 환경정책적 함의, 한국사회와 행정연구 제13권3호, 2002\n- 주민자치센터평가와 지역공동체구축에 관한 연구, 행정논총 제41권2호, 2003\n- 정부업무평가제도와 MBO의 연계방안, 한국행정연구 제13권2호, 2004\n- 투명성 확보를 위한 인사운영시스템의 평가, 한국사회와 행정연구 제15권3호, 2004\n- ": 1,
+            "초고주파회로": 1,
+            "○  연구분야 : 나노재료 설계 및 합성  \n - 에너지 재료 -\n· 리튬/나트륨/포타슘 이온전지 (Li/Na/K-Ion Battery) -  anode \n· 해수전지 (Rechargeable Sea Water Battery) - anode & catalyst for current collector\n· 레덕스 플로우 전지 (Redox Flow Battery) - semi-solid material\n· 연료전지 (Fuel Cell) , 수전해 전극 (water electrolysis) - Carbon / Metal Nano Catalyst   \n· 메탈공기전지 (Metal-Air Battery) - Nano Carbon / Metal Nano Catalyst \n\n - 탄소 재료 -\n· Carbon Nano Ball / Carbon Nanotube / Carbon Nanofiber / Graphene 합성  \n· Carbon Nanotube dispersion   \n\n- Metal 재료": 1,
+            "1. Fluid Dynamics\n   - Heat transfer in heat exchanger\n   - Gas dispersion\n   - Explosion\n\n2. Risk-based System Design and Assessment\n   - System evaluation\n   - Winterization for Polar ship": 1,
+            "강교량, 비파괴, 내하력, 안전진단, 구조해석, CM": 1,
+            "International Finance (Financial Stress, FX Market) \n - “글로벌 금융위기 전후 신흥국 금융불안 결정요인 변화 분석: 외국인 자금\n    흐름을 중심으로” 2020, 금융연구 34(2). [KCI]\n - “Financial Stress in the Foreign Exchange Market and its Real \n    Effect on Firm Investments: Evidence from South Korea”, 2022, \n    Global Economic Review 51(2). [SSCI]\nBusiness Economics (Governance, Investment)\n - “Financial Experts on the Outside Boards, Financial Stress in \n    Foreign Exchange Markets, and Firm Employment”, 2023, \n    Emerging Markets Fina": 1,
+            "- Vapor compression cycle and system\n- Refrigeration, Air conditioning, and heat pump systems\n- Carbon dioxide transcritical system\n- Heat exchangers\n- Thermal energy conversion and storage systems": 1,
+            " - 시스템 설계 및 시뮬레이션\n - 다양한 응용을 위한 마이크로 섬유 제조\n - CAD/CAM": 1,
+            "【저서】\n주석 방문판매등에 관한 법률, 정독, 2023. (공저)\n전자상거래법 전부개정안과 온라인 플랫폼 운영사업자의 의무와 책임, 우리시스템, 2022.\n온라인 플랫폼 중개거래와 공정거래법, 우리시스템, 2021.\n디지털콘텐츠거래와 청약철회권, 우리시스템, 2020.\n전자상거래와 소비자보호법, 우리시스템, 2019.\n시민사회와 법, 선문대학교출판부, 2018.\nConsumer Protection Acts in Korea, 우리시스템, 2018. (공저)\n고령소비자법, 세창출판사, 2017. (공저)\n전자상거래의 다변화와 소비자보호, 세창출판사, 2015. (공저)\n디지털콘텐츠거래와 소비자보호법, 우리시스템, 2015.\n디지털콘텐츠 표준계약서 및 해설서, 한국무선인터넷산업연합회, 2015.\n소비자법, 박영사. 2013. (공저)\n상조업과 소비자보호법, 법문사, 2012. (2013년 대한민국학술원 우수학술도서 선정)\n변화하는 온라인 서비스 환경과 이용자보호, 세창출판사, 2012": 1,
+            "· 선박의 항해안전성 평가시스템 개발 \n· 선박의 전복사고원인분석\n· 선박의 최적항로시스템 개발\n· 해양안전관리체계 분석": 1,
+            "연료전지 및 수소 생산\n 박막 증착 공정\n 군용 특수 전원": 1,
+            "주요연구분야\n해양교통시설의 기술개발, 항로표지의 배치, 항로표지관련 정책개발 \n항로표지시뮬레이션 \n해수유동 모델링 (2차원, 3차원) \n해양오염 확산 Simulation (2차원, 3차원) \n수질개선을 위한 인공조도의 개발 \n폐쇄성 해역에 있어서 수질정화법 개발 \n연안역에서의 해양오염방제기술 개발\n\n진출분야\n해양경찰 정책 및 연구개발, 항로표지, 해상교통, 해양안전, 환경오염, 해양환경, 해양오염방제, 해사안전관리, 친환경, 등부표 동적/정적 안정성 평가": 1,
+            "근현대 동아시아 사회: 이주, 도시, 노동": 1,
+            "- 고전압 및 전력계통\n- 전력IT 및 전력설비 진단기술\n- 피뢰 및 접지\n- LED 조명": 1,
+            "한국근세사, 한일문화교섭사, 임진왜란사, 조선정치사": 1,
+            "평생교육경영, 청소년 정책, 프로그램 평가, 성과평가 \n\n연구 업적:\n초등학교 방과 후 학교 프로그램 학습자 만족도 및 요구도 조사(A Study of Learner's Satisfaction and Need Assessment for After-School Program at Elementary Schools), 「미래청소년학회지」, 제7권(집), 제2호, PP.139~162, 미래청소년학회, 2010. \n방과 후 학교 실태분석과 발전과제, 한국청소년학회, 2010 \n능동적 학습을 유도하는 효과적인 교수법, 해군교육사령부, 2009 \n청소년 사업의 당면과제 및 발전방안, 한국청소년복지학회, 2008 \n청소년육성기금지원사업평가, 한국청소년정책연구원, 2007 \n청소년활동 프로그램 개발 및 평가, 국가청소년위원회, 2007 \n청소년정책의 성과와 발전과제, 부산광역시 청소년시설발전포럼, 2007 \n청소년기관의 사업성과평가 시스템 개발 및 운영방안 연구, 한국청소년학회, 2006 \n청소년 ": 1,
+            "*주요연구분야\n- 해운 및 항만 경영\n- 해사 인공지능 융합 연구\n- 해사 신기술 적용 연구\n- 해사 제도 적용 연구\n\n": 1
+          },
+          "text_length": {
+            "min": 6,
+            "p5": 18,
+            "mean": 190.01476014760146,
+            "p95": 506,
+            "max": 508
+          }
+        }
+      },
+      "strong_correlations_|r|>=0.5": []
+    },
+    "논문": {
+      "n_rows": 5733,
+      "n_cols": 15,
+      "duplicate_rows": 0,
+      "columns": {
+        "순번": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 5733,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "frequent_values": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "numeric_stats": {
+            "min": 1.0,
+            "p5": 287.6,
+            "mean": 2867.0,
+            "p95": 5446.4,
+            "max": 5733.0,
+            "std": 1654.9745214554412
+          },
+          "outliers_>|z|>=3": 0
+        },
+        "논문종류": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 1,
+          "unique_ratio": 0.000174,
+          "sample_values": [
+            "전문학술논물",
+            "전문학술논물",
+            "전문학술논물",
+            "전문학술논물",
+            "전문학술논물"
+          ],
+          "frequent_values": {
+            "전문학술논물": 5733
+          },
+          "text_length": {
+            "min": 6,
+            "p5": 6,
+            "mean": 6.0,
+            "p95": 6,
+            "max": 6
+          }
+        },
+        "제목": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 4985,
+          "unique_ratio": 0.869527,
+          "sample_values": [
+            "Optimal Design Method of a Wireless Charging System for HTS Magnets Using a Genetic Algorithm",
+            "Genetic-Algorithm-Based Room-Temperature Shimming and Long-Term Operational Protocol for a KBSI 400 MHz all-HTS NMR Magnet",
+            "Exploring the Effects of Partial Electrical Connectorson HTS Coils: A Case Study of Insulated Coil and Paraffin-Impregnated NI Coil",
+            "Experimental Study on a Current Sweep Method Combined With Thermal Cycle for Mitigationof Screening Current-Induced Field in aConduction-Cooled REBCO Magnet",
+            "Contact Resistance and Over-Current Characteristicsof No-Insulation High-Temperature SuperconductingCoils Impregnated With an Electrically-ConductiveEpoxy"
+          ],
+          "frequent_values": {
+            "Study on the Variable Speed Diesel Generator and Effects on Structure Vibration Behavior in the DC Grid": 8,
+            "A comparative study on the training method that mixed face-to-face/non-face-to-face education for apprentice engineers in the training ship": 8,
+            "Algorithm for Monitoring Emissions Based on Actual Speed of Ships Participating in the Korean Vessel Speed Reduction Program": 6,
+            "Effects of natural gas admission location and timing on performance and emissions characteristics of LPDF two-stroke engine at low load": 5,
+            "Forecasting Liquefied Natural Gas Bunker Prices Using Artificial Neural Network for Procurement Management": 5,
+            "Study on the Propeller Rope Cutter Concerning Transient Torsional Vibration due to Cutting Action": 5,
+            "A study on sensorless control of low-speed range for induction motors": 5,
+            "HVPE growth of Si crystal with topological chiral morphology": 4,
+            "Path-following control problem for maritime autonomous surface ships (MASS) in adverse weather conditions at low speeds": 4,
+            "Growth of hexagonal-shape Si on a 4H-SiC substrate by mixed-source hydride vapor phase epitaxy": 4,
+            "대형 컨테이너선의 선미파에서의 파라메트릭 롤 해석을 위한 점성유동계산 연구": 4,
+            "Ultra-high corrosion resistance of Al-Mg-Si film on steel sheet formed by PVD Mg coating and heat treatment": 4,
+            "Anomaly Detection Based on Time Series Data of Hydraulic Accumulator": 4,
+            "Synthesis of silicon-carbon black composite as anode material for lithium ion battery": 4,
+            "Potential Liability Issues of AI-Based Embedded Software in Maritime Autonomous Surface Ships for Maritime Safety in the Korean Maritime Industry": 4,
+            "Recycling Waste Soot from Merchant Ships to Produce Anode Materials for Rechargeable Lithium-Ion Batteries": 4,
+            "Optimal Hybrid Pulse Width Modulation for Three-Phase Inverters in Electric Propulsion Ships": 4,
+            "해양환경 모니터링을 위한 순환 신경망 기반의 돌고래 클릭 신호 분류 알고리즘 개발": 4,
+            "A Study on Equivalent Series Resistance Estimation Compensation for DC-Link Capacitor Life Diagnosis of Propulsion Drive in Electric Propulsion Ship": 4,
+            "Insights into the growth of hexagonal Si crystals using Al-based nano absorber": 4
+          },
+          "text_length": {
+            "min": 10,
+            "p5": 23,
+            "mean": 75.9129600558172,
+            "p95": 149,
+            "max": 255
+          }
+        },
+        "논문등급": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 15,
+          "unique_ratio": 0.002616,
+          "sample_values": [
+            "국제전문학술지(SCIE)_JCR상위20%초과",
+            "국제전문학술지(SCIE)_JCR상위20%초과",
+            "국제전문학술지(SCIE)_JCR상위20%초과",
+            "국제전문학술지(SCIE)_JCR상위20%초과",
+            "국제전문학술지(SCIE)_JCR상위20%초과"
+          ],
+          "frequent_values": {
+            "국내등재지": 3186,
+            "국제전문학술지(SCIE)_기타": 522,
+            "국제전문학술지A급(SCIE)": 487,
+            "국제전문학술지(SCIE)_JCR상위10%이내": 449,
+            "국제전문학술지A급(SCI)": 352,
+            "국제전문학술지(SCIE)_JCR상위20%이내": 328,
+            "국제전문학술지(SCIE)_JCR상위20%초과": 268,
+            "국제전문학술지S급": 46,
+            "국제전문학술지(SSCI)_기타": 34,
+            "국제전문학술지A급(SSCI)": 24,
+            "국제전문학술지(SSCI)_JCR상위20%초과": 12,
+            "국내등재후보지": 11,
+            "국제전문학술지(SSCI)_JCR상위20%이내": 7,
+            "국제전문학술지(SSCI)_JCR상위10%이내": 6,
+            "국제전문학술지(A&HCI)_JCR상위20%초과": 1
+          },
+          "text_length": {
+            "min": 5,
+            "p5": 5,
+            "mean": 11.096284667713238,
+            "p95": 24,
+            "max": 25
+          }
+        },
+        "발행기관": {
+          "dtype": "object",
+          "nulls": 1,
+          "unique": 966,
+          "unique_ratio": 0.168528,
+          "sample_values": [
+            "IEEE",
+            "IEEE",
+            "IEEE",
+            "IEEE",
+            "IEEE"
+          ],
+          "frequent_values": {
+            "MDPI": 635,
+            "Elsevier": 484,
+            "한국마린엔지니어링학회": 358,
+            "한국항해항만학회": 307,
+            "해양환경안전학회": 245,
+            "한국해사법학회": 145,
+            "ELSEVIER": 120,
+            "IEEE": 104,
+            "한국수산해양교육학회": 79,
+            "Springer": 73,
+            "한국정보통신학회": 53,
+            "한국자원공학회": 50,
+            "World Scientific Publishing Company": 48,
+            "한국해양공학회": 46,
+            "한국해양대학교 국제해양문제연구소": 46,
+            "한국해양경찰학회": 44,
+            "한국항만경제학회": 43,
+            "한국해운물류학회": 42,
+            "Wiley": 40,
+            "The Korean Society of Marine Engineering": 39
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 4,
+            "mean": 10.940858339148638,
+            "p95": 33,
+            "max": 89
+          }
+        },
+        "ISBN": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 1072,
+          "unique_ratio": 0.186988,
+          "sample_values": [
+            "1051-8223",
+            "1051-8223",
+            "1051-8223",
+            "1051-8223",
+            "1051-8223"
+          ],
+          "frequent_values": {
+            "2234-7925": 445,
+            "1598-5725": 288,
+            "1229-3431": 258,
+            "2077-1312": 179,
+            "1598-1053": 143,
+            "2076-3417": 121,
+            "1996-1073": 85,
+            "1229-8999": 76,
+            "2092-8130": 73,
+            "0029-8018": 70,
+            "2234-4772": 64,
+            "2169-3536": 52,
+            "2288-0291": 51,
+            "2071-1050": 49,
+            "1225-0767": 48,
+            "1598-8538": 45,
+            "2234-6252": 43,
+            "1424-8220": 41,
+            "1976-8192": 41,
+            "1225-1429": 37
+          },
+          "text_length": {
+            "min": 9,
+            "p5": 9,
+            "mean": 9.019884877027733,
+            "p95": 9,
+            "max": 30
+          }
+        },
+        "발행국가": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 38,
+          "unique_ratio": 0.006628,
+          "sample_values": [
+            "미국",
+            "미국",
+            "미국",
+            "미국",
+            "미국"
+          ],
+          "frequent_values": {
+            "대한민국": 3668,
+            "스위스": 648,
+            "영국": 482,
+            "미국": 406,
+            "네덜란드": 267,
+            "싱가포르": 69,
+            "독일": 50,
+            "일본": 20,
+            "대만": 18,
+            "브라질": 16,
+            "중국": 11,
+            "프랑스": 8,
+            "크로아티아": 8,
+            "이집트": 7,
+            "폴란드": 7,
+            "이탈리아": 6,
+            "터키": 5,
+            "사우디아라비아": 4,
+            "인도": 4,
+            "스웨덴": 4
+          },
+          "text_length": {
+            "min": 2,
+            "p5": 2,
+            "mean": 3.536542822257108,
+            "p95": 4,
+            "max": 7
+          }
+        },
+        "키워드": {
+          "dtype": "object",
+          "nulls": 4,
+          "unique": 4975,
+          "unique_ratio": 0.868389,
+          "sample_values": [
+            "Circuit analysis, genetic algorithm, HTS magnet,optimal design, wireless current charging system",
+            "Field homogeneity, genetic algorithm, HTSmagnet, long-term operational protocol, NMR, room-temperatureshimming, screening current induced field",
+            "High field magnet, HTS impregnation, partialelectrical connector, paraffin impregnation",
+            "Current sweep method, REBCO magnet,screening current-induced field",
+            "Electrical rotating machine, electrically-conductive epoxy, and no-insulation"
+          ],
+          "frequent_values": {
+            "-": 19,
+            "structure vibration, variable speed diesel generator, DC grid, fuel consumption, emissions\n": 7,
+            "Two-stroke engine; Natural gas; Dual-fuel; Low load; Combustion; Emissions": 5,
+            "rope cutter; connecting bolt; fatigue; transient torsional vibration; propeller shaft": 5,
+            "Induction motor, Active front end, Sensorless, Space vector modulation, Low-speed range\n": 5,
+            "Training ship, Boarding training period, Practice education, Survey": 5,
+            "anode active material, lithium ion battery, waste soot, petroleum coke, graphitized soot\n": 5,
+            "Batteries, Carbon capture and storage, Environmental impact, Pollution remediation\n": 4,
+            "nano hard carbon, turbostratic structure, solid-electrolyte interphase, co-intercalation reaction, sodium-ion battery\n": 4,
+            "Arc Ion Corrosion Rate, Corrosion Rate, Gamma-Ray Irradiation Exposure, Mechanical Property, Sputtering, Ti/TiN Thin Films\n": 4,
+            "maritime safety; MASS; embedded software; product liability act; artificial intelligence": 4,
+            "4H-SiC · Hexagonal Si · Hydride vapor phase epitaxy · Raman · X-ray diffraction": 4,
+            "숙련도선사, 항만도선, 도선사수급, 도선사 시험, 면허갱신제도, 정년제도, Experienced Pilot, Harbour Pilotage, Pilot Supply and Demand, Pilot Examination, Certificate Revalidation System, Retirement System\n": 4,
+            "Topological crystal  Si crystal Quantum materials": 4,
+            "배기 수트, 엔진 수트, 열처리, 나노 구조, 재활용, Exhaust soot, Engine soot, Annealing, Nanostructure, Recycling\n": 4,
+            "electric propulsion system; three-phase inverters; continuous pulse-width modulation; discontinuous pulse-width modulation; hybrid pulse-width modulation; control algorithm; performance comparison": 4,
+            "Diesel Soot, 2-Stroke Engine, 4-Stroke Engine, Bunker, Nanostructures\n": 4,
+            "AMORPHOUS-SILICON, LI, NANOSTRUCTURES, LITHIATION, MECHANISM, STORAGE, SPHERES, PLASMA, SI\n": 4,
+            "ORC, Pinch point temperature difference(PPTD), Power, Thermal efficiency, Waste heat\n": 4,
+            "분류, 돌고래 클릭 신호, 순환 신경망, 모니터링, 분수 푸리에 변환": 4
+          },
+          "text_length": {
+            "min": 1,
+            "p5": 30,
+            "mean": 96.38994588933497,
+            "p95": 171,
+            "max": 468
+          }
+        },
+        "JCR": {
+          "dtype": "float64",
+          "nulls": 0,
+          "unique": 671,
+          "unique_ratio": 0.117042,
+          "sample_values": [
+            "62.64",
+            "62.64",
+            "62.64",
+            "62.64",
+            "62.64"
+          ],
+          "frequent_values": {
+            "0.0": 4107,
+            "18.0": 91,
+            "32.06": 64,
+            "4.0": 39,
+            "21.87": 34,
+            "21.9": 32,
+            "18.75": 29,
+            "60.53": 24,
+            "2.0": 17,
+            "35.71": 16,
+            "30.82": 15,
+            "7.31": 14,
+            "34.82": 13,
+            "24.0": 13,
+            "30.09": 13,
+            "78.26": 12,
+            "60.965": 11,
+            "54.92": 11,
+            "5.77": 10,
+            "23.35": 10
+          },
+          "numeric_stats": {
+            "min": 0.0,
+            "p5": 0.0,
+            "mean": 7.745952380952381,
+            "p95": 49.36199999999992,
+            "max": 98.295,
+            "std": 17.190231185960165
+          },
+          "outliers_>|z|>=3": 204
+        },
+        "IF": {
+          "dtype": "float64",
+          "nulls": 0,
+          "unique": 483,
+          "unique_ratio": 0.084249,
+          "sample_values": [
+            "1.8",
+            "1.8",
+            "1.8",
+            "1.8",
+            "1.8"
+          ],
+          "frequent_values": {
+            "0.0": 4108,
+            "2.7": 63,
+            "2.679": 46,
+            "2.744": 44,
+            "2.9": 40,
+            "3.9": 32,
+            "2.458": 31,
+            "4.6": 30,
+            "3.4": 26,
+            "2.838": 25,
+            "3.004": 22,
+            "3.252": 22,
+            "2.5": 19,
+            "5.0": 19,
+            "2.3": 17,
+            "3.7": 17,
+            "1.8": 16,
+            "2.8": 16,
+            "3.0": 15,
+            "2.6": 14
+          },
+          "numeric_stats": {
+            "min": 0.0,
+            "p5": 0.0,
+            "mean": 1.221795743938601,
+            "p95": 6.4,
+            "max": 35.339,
+            "std": 2.562088471966819
+          },
+          "outliers_>|z|>=3": 132
+        },
+        "교신저자여부": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 2,
+          "unique_ratio": 0.000349,
+          "sample_values": [
+            "O",
+            "X",
+            "X",
+            "X",
+            "O"
+          ],
+          "frequent_values": {
+            "O": 3293,
+            "X": 2440
+          },
+          "text_length": {
+            "min": 1,
+            "p5": 1,
+            "mean": 1.0,
+            "p95": 1,
+            "max": 1
+          }
+        },
+        "ISBN온라인여부": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 2,
+          "unique_ratio": 0.000349,
+          "sample_values": [
+            "X",
+            "X",
+            "X",
+            "X",
+            "X"
+          ],
+          "frequent_values": {
+            "X": 5488,
+            "O": 245
+          },
+          "text_length": {
+            "min": 1,
+            "p5": 1,
+            "mean": 1.0,
+            "p95": 1,
+            "max": 1
+          }
+        },
+        "노션여부": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 2,
+          "unique_ratio": 0.000349,
+          "sample_values": [
+            "X",
+            "X",
+            "X",
+            "X",
+            "X"
+          ],
+          "frequent_values": {
+            "X": 3320,
+            "O": 2413
+          },
+          "text_length": {
+            "min": 1,
+            "p5": 1,
+            "mean": 1.0,
+            "p95": 1,
+            "max": 1
+          }
+        },
+        "성명": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 354,
+          "unique_ratio": 0.061748,
+          "sample_values": [
+            "강건은",
+            "황영진",
+            "황영진",
+            "황영진",
+            "황영진"
+          ],
+          "frequent_values": {
+            "채규정": 98,
+            "김윤해": 91,
+            "허준호": 85,
+            "심도식": 82,
+            "최철영": 81,
+            "박영수": 76,
+            "이원주": 75,
+            "최재혁": 75,
+            "서영완": 67,
+            "조성환": 64,
+            "김율성": 64,
+            "유경근": 63,
+            "송영채": 56,
+            "김태형": 54,
+            "이창희": 54,
+            "최형식": 50,
+            "박인석": 49,
+            "서동욱": 49,
+            "안형수": 48,
+            "강준": 47
+          },
+          "text_length": {
+            "min": 2,
+            "p5": 3,
+            "mean": 2.976452119309262,
+            "p95": 3,
+            "max": 6
+          }
+        },
+        "사용자번호": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 357,
+          "unique_ratio": 0.062271,
+          "sample_values": [
+            "1765",
+            "1765",
+            "1765",
+            "1765",
+            "1765"
+          ],
+          "frequent_values": {
+            "1807": 98,
+            "1753": 91,
+            "1790": 85,
+            "1756": 82,
+            "1733": 81,
+            "1627": 76,
+            "1651": 75,
+            "1653": 75,
+            "1730": 67,
+            "1731": 64,
+            "1801": 64,
+            "1715": 63,
+            "1804": 56,
+            "1812": 54,
+            "1642": 54,
+            "1743": 50,
+            "1782": 49,
+            "2586": 49,
+            "1773": 48,
+            "1664": 47
+          },
+          "numeric_stats": {
+            "min": 1611.0,
+            "p5": 1627.0,
+            "mean": 1969.075876504448,
+            "p95": 2589.0,
+            "max": 11735.0,
+            "std": 1264.0527197125737
+          },
+          "outliers_>|z|>=3": 95
+        }
+      },
+      "strong_correlations_|r|>=0.5": []
+    },
+    "특허": {
+      "n_rows": 655,
+      "n_cols": 7,
+      "duplicate_rows": 0,
+      "columns": {
+        "순번": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 655,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "frequent_values": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "6": 1,
+            "7": 1,
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "numeric_stats": {
+            "min": 1.0,
+            "p5": 33.7,
+            "mean": 328.0,
+            "p95": 622.3,
+            "max": 655.0,
+            "std": 189.08199279677586
+          },
+          "outliers_>|z|>=3": 0
+        },
+        "기술구분": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 2,
+          "unique_ratio": 0.003053,
+          "sample_values": [
+            "전체기술",
+            "전체기술",
+            "전체기술",
+            "전체기술",
+            "전체기술"
+          ],
+          "frequent_values": {
+            "전체기술": 493,
+            "최신기술": 162
+          },
+          "text_length": {
+            "min": 4,
+            "p5": 4,
+            "mean": 4.0,
+            "p95": 4,
+            "max": 4
+          }
+        },
+        "기술명": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 644,
+          "unique_ratio": 0.983206,
+          "sample_values": [
+            "고온고압 가스와 저압 액체 간의 모듈형 열교환장치",
+            "모터의 중력 보상기",
+            "연속재생 메디아 필터장치를 이용한 여과공정",
+            "수중모터의 수밀장치",
+            "수세처리 생략기술을 이용한 아연용융도금 방법"
+          ],
+          "frequent_values": {
+            "전복용 배합사료 조성물": 4,
+            "네트워크 모니터링용 프로토콜 변환 장치": 3,
+            "음식 공유경제 플랫폼 제공시스템 및 방법": 2,
+            "해양시설물용 전기적 방오장치": 2,
+            "디지털 이미지 기반 암반평점값 산출 방법 및 장치": 2,
+            "탄소체의 제조방법 및 이를 통해 제조된 탄소체": 2,
+            "선박의 연안 항해를 위한 안전항로 영역표시 시스템": 2,
+            "친환경 스마트선박 육상 해상 디지털트윈 통합 실증 시스템 및 방법": 2,
+            "수중 작업용 매니퓰레이터": 1,
+            "경량기포 조성물 제조용 혼합장치": 1,
+            "강교량 수직보강재의 응답특성을 이용한 차량중량 계측 시스템": 1,
+            "수위 변동형 공기환원전극 생물전기화학전지 및 그 운전 방법": 1,
+            "침식 방호 블록들의 배치 구조": 1,
+            "토션바를 구비한 엑소 스켈러톤": 1,
+            "파력발전시스템": 1,
+            "생물전기화학전지의 산화전극": 1,
+            "중소선박 엔진용 배기가스 정화시스템": 1,
+            "콘크리트 구조물용 파일 접합 구조체": 1,
+            "앵커형 FRP층이 구비된 보강 구조물 및 이의 제조방법": 1,
+            "PC하우스와 석션파일을 이용한 해상풍력 자켓지지구조물 및 그 시공방법": 1
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 10,
+            "mean": 28.827480916030535,
+            "p95": 53,
+            "max": 67
+          }
+        },
+        "기술분류": {
+          "dtype": "object",
+          "nulls": 2,
+          "unique": 17,
+          "unique_ratio": 0.026034,
+          "sample_values": [
+            "에너지 자원",
+            "로봇",
+            "신재생 에너지",
+            "로봇",
+            "조선해양"
+          ],
+          "frequent_values": {
+            "조선해양": 157,
+            "정보통신미디어": 109,
+            "에너지 자원": 58,
+            "신재생 에너지": 53,
+            "제조기반": 52,
+            "농림축수산식품": 40,
+            "환경기상": 36,
+            "건설교통": 30,
+            "LED/광": 25,
+            "전력/원자력": 22,
+            "바이오": 21,
+            "소재": 17,
+            "로봇": 15,
+            "자동차 철도": 9,
+            "반도체": 5,
+            "항공우주": 3,
+            "지능형  물류": 1
+          },
+          "text_length": {
+            "min": 2,
+            "p5": 3,
+            "mean": 5.105666156202144,
+            "p95": 7,
+            "max": 7
+          }
+        },
+        "대표 발명자": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 130,
+          "unique_ratio": 0.198473,
+          "sample_values": [
+            "조자경",
+            "강예인",
+            "황아민",
+            "강예인",
+            "최조우"
+          ],
+          "frequent_values": {
+            "임가아": 34,
+            "강예인": 30,
+            "박태윤": 26,
+            "신유카": 23,
+            "송파은": 21,
+            "최승파": 18,
+            "신훈조": 16,
+            "송조가": 14,
+            "오재성": 14,
+            "이상아": 14,
+            "윤파나": 13,
+            "류마아": 12,
+            "권범바": 12,
+            "권나영": 11,
+            "신상성": 11,
+            "박인한": 10,
+            "박승채": 10,
+            "임우범": 10,
+            "강채윤": 9,
+            "송사빈": 9
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 3,
+            "mean": 3.0,
+            "p95": 3,
+            "max": 3
+          }
+        },
+        "대표 발명자 번호": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 130,
+          "unique_ratio": 0.198473,
+          "sample_values": [
+            "1747",
+            "1743",
+            "2562",
+            "1743",
+            "2544"
+          ],
+          "frequent_values": {
+            "1669": 34,
+            "1743": 30,
+            "1763": 26,
+            "1759": 23,
+            "1770": 21,
+            "1885": 18,
+            "1664": 16,
+            "1673": 14,
+            "1764": 14,
+            "1761": 14,
+            "1713": 13,
+            "1715": 12,
+            "1692": 12,
+            "1760": 11,
+            "1805": 11,
+            "1804": 10,
+            "1756": 10,
+            "1769": 10,
+            "1731": 9,
+            "1799": 9
+          },
+          "numeric_stats": {
+            "min": 1622.0,
+            "p5": 1651.0,
+            "mean": 1933.6335877862596,
+            "p95": 2577.0,
+            "max": 11463.0,
+            "std": 1026.0986054882044
+          },
+          "outliers_>|z|>=3": 7
+        },
+        "키워드": {
+          "dtype": "object",
+          "nulls": 18,
+          "unique": 626,
+          "unique_ratio": 0.982732,
+          "sample_values": [
+            "고온고압 가스, 저압 액체, 모듈형, 열교환장치, 원자로",
+            "모터, 중력 보상기, 자연 보상, 소형 모터, 부하 모멘트",
+            "연속재생, 메디아, 필터장치, 여과공정",
+            "수중모터, 수밀장치, 오일자켓, 차폐, 고심도",
+            "아연용융도금, 수세처리 생략기술, 플럭스액"
+          ],
+          "frequent_values": {
+            "네트워크,  네트워크 프로토콜,  네트워크 변환": 3,
+            "순환형, 침출제, 중금속 오염토양, 복원방법": 2,
+            "하수처리, 인 흡착, 표면개질 바이오차(biochar), 나노메탈 바이오차, 바이오매스": 2,
+            "해양시설물, 전기, 방오장치": 2,
+            "전복, 배합사료, 조성물": 2,
+            "파력 발전 모듈, 등부표, 항로 표지": 2,
+            "수중램프,  수중엘이디램프,  LED램프,  수중LED": 2,
+            "탄소체,  탄소섬유,  탄소체 제조방법": 2,
+            "해양, 인공지능, 안전, 위험성 평가, AI, 시스템": 2,
+            "친환경, 스마트선박, 디지털트윈, 시뮬레이션, 실증 시스템, 통신, 교육": 2,
+            "강교량 수직보강재, 차량중량 계측 시스템, 변형률게이지, 계측센서": 1,
+            "수위 변동형, 공기환원전극, 생물전기화학전지": 1,
+            "침식 방호, 콘크리트 블록, 배치, 인공 리플": 1,
+            "토션바를, 엑소, 스켈러톤": 1,
+            "파력, 발전시스템, 저파고, 도서지역, 연안해역": 1,
+            "생물전기화학전지, 산화전극, 하이드로젤, 전도성 집전체, 탄소나노튜브 복합체": 1,
+            "배기가스, 정화시스템, 중소선박 엔진용, 배기재순환장치": 1,
+            "콘크리트 구조물, 파일 접합 구조체, 슬롯구멍": 1,
+            "앵커형, FRP층, 보강 구조물, 콘크리트 구조물": 1,
+            "모터, 중력 보상기, 자연 보상, 소형 모터, 부하 모멘트": 1
+          },
+          "text_length": {
+            "min": 6,
+            "p5": 13,
+            "mean": 27.739403453689167,
+            "p95": 48,
+            "max": 118
+          }
+        }
+      },
+      "strong_correlations_|r|>=0.5": []
+    },
+    "가명처리": {
+      "n_rows": 356,
+      "n_cols": 2,
+      "duplicate_rows": 0,
+      "columns": {
+        "1765": {
+          "dtype": "int64",
+          "nulls": 0,
+          "unique": 356,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "1735",
+            "1749",
+            "1867",
+            "1790",
+            "1677"
+          ],
+          "frequent_values": {
+            "1735": 1,
+            "1749": 1,
+            "1867": 1,
+            "1790": 1,
+            "1677": 1,
+            "1743": 1,
+            "1733": 1,
+            "1651": 1,
+            "2136": 1,
+            "1689": 1,
+            "1703": 1,
+            "2647": 1,
+            "1807": 1,
+            "1742": 1,
+            "1693": 1,
+            "11464": 1,
+            "1731": 1,
+            "1663": 1,
+            "1778": 1,
+            "1746": 1
+          },
+          "numeric_stats": {
+            "min": 1611.0,
+            "p5": 1628.75,
+            "mean": 2513.1938202247193,
+            "p95": 11437.25,
+            "max": 11735.0,
+            "std": 2340.840137538737
+          },
+          "outliers_>|z|>=3": 22
+        },
+        "강건은": {
+          "dtype": "object",
+          "nulls": 0,
+          "unique": 356,
+          "unique_ratio": 1.0,
+          "sample_values": [
+            "강빈수",
+            "강서유",
+            "강승예",
+            "강영건",
+            "강영정"
+          ],
+          "frequent_values": {
+            "강빈수": 1,
+            "강서유": 1,
+            "강승예": 1,
+            "강영건": 1,
+            "강영정": 1,
+            "강예인": 1,
+            "강원조": 1,
+            "강원하": 1,
+            "강유원": 1,
+            "강윤건": 1,
+            "강윤기": 1,
+            "강인서": 1,
+            "강재윤": 1,
+            "강재이": 1,
+            "강재태": 1,
+            "강진상": 1,
+            "강채윤": 1,
+            "강카호": 1,
+            "강타타": 1,
+            "강파한": 1
+          },
+          "text_length": {
+            "min": 3,
+            "p5": 3,
+            "mean": 3.0,
+            "p95": 3,
+            "max": 3
+          }
+        }
+      },
+      "strong_correlations_|r|>=0.5": []
+    }
+  },
+  "relations": [
+    {
+      "sheet_a": "연구자",
+      "sheet_b": "논문",
+      "column": "사용자번호",
+      "jaccard": 0.698667,
+      "a_only": 18,
+      "b_only": 95,
+      "intersection": 262
+    }
+  ]
+}

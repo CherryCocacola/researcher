@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 연구자 추천 시스템</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      margin-top: 80px;
+      font-size: 38px;
+      font-weight: bold;
+      color: #4285F4;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .upload-box {
+      margin-top: 30px;
+      border: 2px dashed #ccc;
+      padding: 30px;
+      width: 360px;
+      text-align: center;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .upload-box.dragover {
+      border-color: #4285F4;
+      background-color: #f0f8ff;
+    }
+
+    .upload-box input[type="file"] {
+      display: none;
+    }
+
+    .upload-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4285F4;
+      color: white;
+      border-radius: 24px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .preview-img {
+      margin-top: 15px;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .search-box {
+      margin-top: 30px;
+      width: 700px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .search-box textarea {
+      flex: 1;
+      min-height: 120px;
+      font-size: 14px;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+      box-shadow: 0 1px 6px rgba(0,0,0,.1);
+      overflow: hidden;
+    }
+
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: flex-start;
+    }
+
+    .button-stack button {
+      padding: 10px 22px;
+      font-size: 15px;
+      border-radius: 24px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .button-stack button:nth-child(1) { background-color: #8E24AA; }
+    .button-stack button:nth-child(2) { background-color: #4285F4; }
+    .button-stack button:nth-child(3) { background-color: #9E9E9E; }
+
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #4285F4;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 30px auto;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .result {
+      margin-top: 40px;
+      width: 800px;
+    }
+
+    .result-box {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      color: #d32f2f;
+      font-weight: bold;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+<div class="logo">AI 연구자 추천 시스템</div>
+
+<div class="upload-box" id="dropZone">
+  <div>
+    <img src="/static/icons8.png" alt="이미지를 드래그 하세요" style="max-width: 100%; height: auto;" />
+  </div>
+  <input type="file" id="imageInput" accept=".png,.jpg,.jpeg">
+  <img id="previewImage" class="preview-img" style="display:none;" />
+  <label for="imageInput" class="upload-label">파일 선택</label>
+</div>
+
+
+
+<div class="search-box">
+  <textarea id="queryInput" placeholder="AI가 분석한 이미지 설명 또는 직접 입력할 주제를 작성해주세요."></textarea>
+  <div class="button-stack">
+    <button onclick="aiAssist()">AI 어시스트</button>
+    <button onclick="search()">연구자 추천</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>
+</div>
+
+<div id="loader" class="loader"></div>
+<div id="results" class="result"></div>
+
+<script>
+  const dropZone = document.getElementById("dropZone");
+  const imageInput = document.getElementById("imageInput");
+  const previewImage = document.getElementById("previewImage");
+  const queryInput = document.getElementById("queryInput");
+  const resultsDiv = document.getElementById("results");
+
+  dropZone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropZone.classList.add("dragover");
+  });
+
+  dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+
+  dropZone.addEventListener("drop", async e => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+    const file = e.dataTransfer.files[0];
+    if (file) await uploadImage(file);
+  });
+
+  imageInput.addEventListener("change", async () => {
+    const file = imageInput.files[0];
+    if (file) await uploadImage(file);
+  });
+
+  function autoResizeTextarea(el) {
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+
+  queryInput.addEventListener("input", () => autoResizeTextarea(queryInput));
+
+  queryInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      const value = queryInput.value.trim();
+      if (value.length < 1) {
+        alert("연구과제를 입력해주세요.");
+      } else {
+        search();
+      }
+    }
+  });
+
+  async function uploadImage(file) {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      previewImage.src = e.target.result;
+      previewImage.style.display = "block";
+    }
+    reader.readAsDataURL(file);
+
+    document.getElementById("loader").style.display = "block";
+
+    const res = await fetch("/upload", { method: "POST", body: formData });
+    const data = await res.json();
+    document.getElementById("loader").style.display = "none";
+
+    if (data.query) {
+      queryInput.value = data.query;
+      autoResizeTextarea(queryInput);
+    } else {
+      alert("이미지 분석에 실패했습니다.");
+    }
+  }
+
+  async function aiAssist() {
+    const query = queryInput.value.trim();
+    if (query.length < 1) {
+      alert("문장을 먼저 입력해주세요.");
+      return;
+    }
+
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
+
+    const res = await fetch("/assist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: query })
+    });
+
+    loader.style.display = "none";
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data.query) {
+        queryInput.value = data.query;
+        autoResizeTextarea(queryInput);
+      }
+    } else {
+      alert("AI 어시스트 요청에 실패했습니다.");
+    }
+  }
+
+  async function search() {
+    const query = queryInput.value.trim();
+    const loader = document.getElementById("loader");
+
+    if (query.length < 1) {
+      alert("연구과제를 입력해주세요.");
+      return;
+    }
+
+    resultsDiv.innerHTML = "";
+    loader.style.display = "block";
+
+    const res = await fetch("/recommend", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query })
+    });
+
+    const data = await res.json();
+    loader.style.display = "none";
+
+    if (data.length === 0) {
+      resultsDiv.innerHTML = "<p>결과가 없습니다.</p>";
+      return;
+    }
+
+    data.forEach((item, index) => {
+      const el = document.createElement("div");
+      el.className = "result-box";
+      el.innerHTML = `
+        <h3>${index + 1}. ${item.name}</h3>
+        <canvas id="scoreChart${index}" width="300" height="100"></canvas>
+        <p><b>· 협업 적합도 점수:</b> ${item.score}점</p>
+        <p><b>· 연구자 키워드:</b> ${item.research_keywords.join(', ')}</p>
+        <p><b>· 논문 키워드:</b> ${item.paper_keywords.join(', ')}</p>
+        <p><span class="highlight">추천 사유:</span><br>${item.reason.replace(/\n/g, '<br>')}</p>
+      `;
+      resultsDiv.appendChild(el);
+
+      const ctx = document.getElementById(`scoreChart${index}`).getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['적합도'],
+          datasets: [{
+            label: `${item.score}점`,
+            data: [item.score],
+            backgroundColor: '#4285F4'
+          }]
+        },
+        options: {
+          responsive: false,
+          scales: { y: { beginAtZero: true, max: 100 } },
+          plugins: { legend: { display: true } }
+        }
+      });
+    });
+  }
+
+  function clearAll() {
+    queryInput.value = "";
+    previewImage.src = "";
+    previewImage.style.display = "none";
+    resultsDiv.innerHTML = "";
+    autoResizeTextarea(queryInput);
+  }
+</script>
+</body>
+</html>
