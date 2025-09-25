@@ -1,0 +1,45 @@
+name: WBS Notion Sync
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  issues:
+    types: [opened, edited, closed, reopened, assigned, unassigned, labeled, unlabeled]
+  issue_comment:
+    types: [created, edited, deleted]
+  schedule:
+    - cron: '0 */6 * * *'  # 6시간마다 동기화
+
+jobs:
+  wbs-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install PyGithub requests python-dotenv
+    
+    - name: Sync WBS to Notion
+      run: python tools/wbs_notion_sync.py
+      env:
+        NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        REPO: ${{ github.repository }}
+    
+    - name: Generate WBS Report
+      run: |
+        echo "## 📊 WBS 동기화 완료" >> $GITHUB_STEP_SUMMARY
+        echo "- 이슈 상태가 Notion WBS 보드에 반영되었습니다" >> $GITHUB_STEP_SUMMARY
+        echo "- 다음 동기화: 6시간 후" >> $GITHUB_STEP_SUMMARY
+        echo "- GitHub 이슈 라벨을 통해 WBS 상태를 관리하세요" >> $GITHUB_STEP_SUMMARY
