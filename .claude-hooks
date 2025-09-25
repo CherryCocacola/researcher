@@ -1,0 +1,10 @@
+# Claude Code 훅 설정 파일
+# 이 파일은 Claude Code가 파일을 수정할 때 자동으로 실행할 명령어들을 정의합니다.
+
+# 파일 수정 후 실행되는 훅
+post_edit_hook=python tools/auto_commit.py "Claude 수정: ${MODIFIED_FILES}"
+
+# 추가 훅 설정 (필요시 사용)
+# pre_edit_hook=echo "파일 수정을 시작합니다..."
+# pre_commit_hook=python -m flake8 . --exclude=.venv,__pycache__
+# post_commit_hook=echo "커밋이 완료되었습니다."
