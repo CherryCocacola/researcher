@@ -157,3 +157,4 @@ WHERE (homepage IS NULL OR trim(homepage) = '') AND name ILIKE '%AIP%';
 
 
 
+
