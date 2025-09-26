@@ -9,7 +9,7 @@ from psycopg2.extras import RealDictCursor
 from core.db import get_connection
 
 # .env 파일 로드
-load_dotenv()
+load_dotenv("settings/.env")
 
 # Flask 앱 초기화
 app = Flask(__name__)
