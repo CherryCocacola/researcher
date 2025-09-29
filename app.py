@@ -9,28 +9,16 @@ from psycopg2.extras import RealDictCursor
 from core.db import get_connection
 
 # .env 파일 로드
-load_dotenv()
+load_dotenv("settings/.env")
 
 # Flask 앱 초기화
 app = Flask(__name__)
 
 # 구성 요소 초기화
 config = AppConfig()
-embedding = None
-recommender = None
+embedding = VectorUtils(config)
+recommender = ResearcherRecommender(embedding, config)
 assistant = Assistant(config)
-
-def _db_ready(cfg: AppConfig) -> bool:
-    return bool(cfg.db_host and cfg.db_name and cfg.db_user and cfg.db_password)
-
-def _ensure_recommender():
-    global embedding, recommender
-    if recommender is None:
-        if not _db_ready(config):
-            raise RuntimeError("DB 환경변수가 설정되지 않았습니다.")
-        embedding = VectorUtils(config)
-        recommender = ResearcherRecommender(embedding, config)
-    return recommender
 
 # 라우팅
 # 메인 화면 렌더링
@@ -70,17 +58,10 @@ def assist_text():
 @app.route("/recommend", methods=["POST"])
 def recommend():
     """사용자 질의를 바탕으로 연구자를 추천하여 점수/사유/키워드 등을 반환합니다."""
-    data = request.json or {}
-    query = (data.get("query", "") or "").strip()
+    query = request.json.get("query", "")
     if not query:
         return jsonify([])
-    if not _db_ready(config):
-        return jsonify({"error": "DB 연결 정보가 설정되지 않았습니다."}), 503
-    try:
-        rec = _ensure_recommender()
-    except Exception as e:
-        return jsonify({"error": str(e)}), 503
-    results = rec.recommend(query)
+    results = recommender.recommend(query)
     payload = []
     for item in results:
         payload.append({

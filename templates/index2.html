@@ -253,9 +253,12 @@
         if (data.query) {
           queryInput.value = data.query;
           autoResizeTextarea(queryInput);
+        } else if (data.error) {
+          alert(data.error);
         }
       } else {
-        alert("AI 어시스트 요청에 실패했습니다.");
+        const data = await res.json().catch(() => ({}));
+        alert(data.error || "AI 어시스트 요청에 실패했습니다.");
       }
     }
   
