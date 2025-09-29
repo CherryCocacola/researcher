@@ -4,11 +4,9 @@ import os
 class AppConfig:
     def __init__(self):
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
-        # 모델 분리: 텍스트/비전 (안전한 기본값)
-        self.openai_text_model_name = os.getenv("OPENAI_TEXT_MODEL", "gpt-4o-mini")
+        # 모델 분리: 텍스트/비전 (기본값: GPT-4o 시리즈)
+        self.openai_text_model_name = os.getenv("OPENAI_TEXT_MODEL", "gpt-4o")
         self.openai_vision_model_name = os.getenv("OPENAI_VISION_MODEL", "gpt-4o")
-        # 하위 호환용(기존 코드 대비): 사용처에서 text/vision 중 택1
-        self.openai_model_name = os.getenv("OPENAI_MODEL", self.openai_text_model_name)
 
         # db connection (provide via environment variables)
         self.db_host = os.getenv("DB_HOST", "")
