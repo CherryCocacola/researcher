@@ -9,7 +9,7 @@ from psycopg2.extras import RealDictCursor
 from core.db import get_connection
 
 # .env 파일 로드
-load_dotenv("settings/.env")
+load_dotenv()
 
 # Flask 앱 초기화
 app = Flask(__name__)
@@ -40,10 +40,19 @@ def upload_image():
 @app.route("/assist", methods=["POST"])
 def assist_text():
     """텍스트 입력을 받아 요약/정리 결과를 반환합니다."""
-    text = request.json.get("text", "")
+    data = request.json or {}
+    text = (data.get("text", "") or "").strip()
     if not text:
         return jsonify({"error": "문장을 입력해주세요."}), 400
-    return assistant.assist_from_text(text)
+    if not config.openai_api_key:
+        return jsonify({"error": "OPENAI_API_KEY가 설정되지 않았습니다."}), 503
+    try:
+        result = assistant.assist_from_text(text)
+        if isinstance(result, dict) and result.get("error"):
+            return jsonify(result), 502
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # 연구자 추천
 @app.route("/recommend", methods=["POST"])
