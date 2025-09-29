@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from dotenv import load_dotenv
+from pathlib import Path
 from core.config import AppConfig
 from core.vector_utils import VectorUtils
 from core.recommendation import ResearcherRecommender
@@ -9,7 +10,9 @@ from psycopg2.extras import RealDictCursor
 from core.db import get_connection
 
 # .env 파일 로드
-load_dotenv("settings/.env")
+BASE_DIR = Path(__file__).resolve().parent
+ENV_PATH = BASE_DIR / "settings" / ".env"
+load_dotenv(ENV_PATH)
 
 # Flask 앱 초기화
 app = Flask(__name__)
@@ -48,6 +51,8 @@ def upload_image():
     image = request.files.get("image")
     if not image:
         return jsonify({"error": "이미지를 업로드하세요."}), 400
+    if not config.openai_api_key:
+        return jsonify({"error": "OPENAI_API_KEY가 설정되지 않았습니다."}), 503
     return assistant.analyze_image(image)
 
 # 텍스트 어시스트(요약/정리)
